@@ -35,7 +35,7 @@ function Home() {
                     className='w-full  max-h-[30vh] rounded mt-4'/>
                 <p className='font-Oswd mt-4 text-5xl text-Text'>Exclusive Deals</p>
             </div>
-            <div className='flex border-1 gap-2 flex-wrap justify-center items-center  relative'>
+            <div className='flex gap-2 flex-wrap justify-center items-center  relative'>
                 {Proj.map((el) => (
                     <div key={el.ID} className='bg-Thir shadow-xl hover:-translate-y-2 p-[1ch] rounded max-h-[50vh] max-w-[60vw] m-[0.2ch]'>
                         <img src={el.Img} className='w-[20vh] h-[25vh]'/>
