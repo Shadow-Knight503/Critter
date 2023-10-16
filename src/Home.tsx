@@ -8,8 +8,8 @@ import { Db } from "./Config"
 
 function Home() {
     const [Proj, setProj] = useState([{
-        Name: "", Descrp: "", Img: "", Price: "",
-    }])
+        Name: "", Descrp: "", Img: "", Price: "", ID: ""
+        }])
   
     const ProjRef = collection(Db, "Critter_Purchase")
   
@@ -35,13 +35,12 @@ function Home() {
                     className='w-full  max-h-[30vh] rounded mt-4'/>
                 <p className='font-Oswd mt-4 text-5xl text-Text'>Exclusive Deals</p>
             </div>
-            <div className='flex gap-2 flex-wrap justify-center items-center  relative'>
+            <div className='flex border-1 gap-2 flex-wrap justify-center items-center  relative'>
                 {Proj.map((el) => (
-                    <div className='bg-Thir shadow-xl hover:-translate-y-2 p-[1ch] rounded max-h-[50vh] max-w-[40vw] m-[0.2ch]'>
+                    <div key={el.ID} className='bg-Thir shadow-xl hover:-translate-y-2 p-[1ch] rounded max-h-[50vh] max-w-[60vw] m-[0.2ch]'>
                         <img src={el.Img} className='w-[20vh] h-[25vh]'/>
-                        <p className='mt-[1ch] font-Oswd text-[2ch] text-slate-200'>{el.Name}
-                            <p className='font-Oswd text-2xl text-Text'>Rs {el.Price}</p>
-                        </p>
+                        <p className='mt-[1ch] mb-0 font-Oswd text-[2ch] text-slate-200'>{el.Name}</p>
+                        <p className='font-Oswd text-xl text-Text'>Rs {el.Price}</p>
                     </div>
                 ))}
             </div>
