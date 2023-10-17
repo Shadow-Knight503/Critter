@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { collection, getDoc, doc, documentId,
+import { collection, documentId,
     query, onSnapshot, where } from 'firebase/firestore'
 import { Db } from "../Config"
 
