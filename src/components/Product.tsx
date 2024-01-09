@@ -20,6 +20,7 @@ function Prod() {
             let Cloth: any = {}
     
             snapshot.forEach((doc) => {
+                console.log(doc.data())
                 Cloth = {...doc.data(), ID: doc.id}
             })
             setCloth(Cloth)   
