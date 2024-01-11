@@ -1,8 +1,6 @@
 import './App.css'
 import 'bootstrap'
-import { 
-  BrowserRouter, Routes, Route, 
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import Home from './components/Home';
 // import Prod from './components/Product';
 import Nav from './components/Nav';

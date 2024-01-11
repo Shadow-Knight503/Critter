@@ -1,7 +1,7 @@
-import { useState } from "react";
+//import { useState } from "react";
 
 function Badge() {
-    const [bg, setBg] = useState('')
+    //const [bg, setBg] = useState('')
 
     return (
         <>
