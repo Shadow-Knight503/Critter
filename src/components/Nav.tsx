@@ -2,11 +2,11 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
-const navigation = [
-  { name: 'Home', href: '/', current: true },
-  { name: 'Sale', href: '/', current: false },
-  { name: 'Track Order', href: '/', current: false },
-  { name: 'Contact Us', href: '/', current: false },
+const navigation: any = [
+  // { name: 'Home', href: '/', current: true },
+  // { name: 'Sale', href: '/', current: false },
+  // { name: 'Track Order', href: '/', current: false },
+  // { name: 'Contact Us', href: '/', current: false },
 ]
 
 function classNames(...classes: any) {
@@ -42,7 +42,7 @@ export default function Nav() {
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
-                    {navigation.map((item) => (
+                    {navigation.map((item: any) => (
                       <a
                         key={item.name}
                         href={item.href}
@@ -130,7 +130,7 @@ export default function Nav() {
 
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
-              {navigation.map((item) => (
+              {navigation.map((item: any) => (
                 <Disclosure.Button
                   key={item.name}
                   as="a"
