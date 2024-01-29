@@ -9,7 +9,6 @@ function Reg(props: any) {
         Name: '', Pass: ''
     })
     const [Sld, setSld] = useState(0)
-    const [dir, setDir] = useState("")
 
     const Label = ['Login Info', 'Basic Info', 'Other']
     const Flds = [{ID: 'Lgn_Frm', Dets: [
@@ -66,14 +65,12 @@ function Reg(props: any) {
         })
     }
     
-    async function sld(p: number, d: any) {
-        setDir(d)
+    async function sld(p: number) {
         let doc = document.getElementById(Flds[Sld].ID) || null
         doc?.classList.toggle('active')
         let len: number = Flds[Sld].Dets.length || 0
         await timeout(200 + len * 100)
         doc?.classList.toggle('hidden')
-        setDir(d==="-"?"":"-")
         setSld(Sld + p)
         doc = document.getElementById(Flds[Sld + p].ID) || null
         doc?.classList.toggle('hidden')
@@ -99,7 +96,7 @@ function Reg(props: any) {
                         <div key={fld.ID} className="group hidden active
                             transition-all" id={fld.ID}>
                             {fld.Dets.map((fl: any, ind: number) => (
-                                <div className={`relative mt-4 group-[.active]:${dir}translate-x-[35.2vw] ` +
+                                <div className={`relative mt-4 group-[.active]:translate-x-[35.2vw] ` +
                                     `transition-all ` +
                                     `duration-300 ease-in`} key={fl.id}
                                     style={{'transitionDelay': `${ind * 100}ms`}}>
@@ -127,14 +124,14 @@ function Reg(props: any) {
                     disabled={Sld <= 0?true: false}
                     className='bg-blue-900 py-2 px-2 rounded mt-3 
                     text-slate-300 disabled:bg-slate-700 disabled:text-slate-500' 
-                    type='button'  onClick={() => sld(-1, "")}>Back 
+                    type='button'  onClick={() => sld(-1)}>Back 
                     <PaperAirplaneIcon className="inline-block ml-2 mb-1 h-6 w-6" />
                 </button>
                 <button 
                     disabled={Sld >= Flds.length - 1?true: false}
                     className='bg-blue-900 py-2 px-2 rounded mt-3 
                     float-right text-slate-300 disabled:bg-slate-700 disabled:text-slate-500' 
-                    type='button' onClick={() => sld(1, "-")}>Next 
+                    type='button' onClick={() => sld(1)}>Next 
                     <PaperAirplaneIcon className="inline-block ml-2 mb-1 h-6 w-6" />
                 </button>
                 <button className='bg-blue-900 py-2 px-2 rounded mt-3 

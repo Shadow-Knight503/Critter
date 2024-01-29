@@ -24,7 +24,7 @@ function Auth() {
                 </div>
             </div>    
         </>    
-    )
+    )   
 }
 
 export default Auth
